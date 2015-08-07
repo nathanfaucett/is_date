@@ -1,4 +1,4 @@
-var isObjectLike = require("is_object_like");
+var isObject = require("is_object");
 
 
 var objectToString = Object.prototype.toString;
@@ -7,9 +7,9 @@ var objectToString = Object.prototype.toString;
 module.exports = isDate;
 
 
-function isDate(obj) {
+function isDate(value) {
     return (
-        isObjectLike(obj) &&
-        objectToString.call(obj) === "[object Date]"
+        isObject(value) &&
+        objectToString.call(value) === "[object Date]"
     ) || false;
 }
